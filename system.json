@@ -1,0 +1,3 @@
+{
+    "dbUrl" : "mongodb://jubi:jubi@uatmongo.parramato.com:27017/prudentDb"
+}

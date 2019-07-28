@@ -1,0 +1,25 @@
+{
+  "name": "jubimoney",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JubiAi/jubiMoney.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JubiAi/jubiMoney/issues"
+  },
+  "homepage": "https://github.com/JubiAi/jubiMoney#readme",
+  "dependencies": {
+    "@typeform/embed": "^0.9.5",
+    "bot-middleware-jubi": "^1.0.95",
+    "match-all": "^1.2.5",
+    "mongoose": "^5.6.0"
+  }
+}

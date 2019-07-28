@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class="ios iphone mobile landscape">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>JubiMoney - Personalised financial planner for every Indian</title>
+        <meta property="og:title" content="We only fear what we don’t know. Get your FREE personalised financial plan here to start your journey towards a bright financial future. ✨" />
+        <meta property="og:type" content="Powered By Jubi" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-title" content="bot">
+        <link href="css/jubimoney.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="./icon.png">
+        <link rel="apple-touch-startup-image" href="./icon.png">
+        <link rel="manifest" href="./manifest.json">    
+        <!-- Appzi: Capture Insightful Feedback -->
+        <script async src="https://app.appzi.io/bootstrap/bundle.js?token=Sa0Kt"></script>
+        <!-- End Appzi -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495554-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'UA-140495554-2');
+        </script>
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+        <script type="text/javascript" src="./js/loader.js"></script>
+        <script type="text/javascript" src="./js/pwa.js"></script>
+        <div id="jubi-chat-loader-app"></div>
+        <script>
+            $(document).ready(function () {
+                $('.question-options-persist-webView').click(function () {
+                    console.log("clicked here")
+                    $('#loading-content-gif').show();
+                    setTimeout(function () {
+                        $('#loading-content-gif').hide();
+                    }, 2000)
+                });
+            });
+        </script>
+        <div class="addthis_inline_share_toolbox"></div>
+        <!-- <div class='oss-widget-interface'></div> -->
+        <script type="text/javascript" src="//sharecdn.social9.com/v2/js/opensocialshare.js"></script>
+        <script type="text/javascript" src="//sharecdn.social9.com/v2/js/opensocialsharedefaulttheme.js"></script>
+        <link rel="stylesheet" type="text/css" href="//sharecdn.social9.com/v2/css/os-share-widget-style.css"/>
+        <script type="text/javascript">
+            var shareWidget = new OpenSocialShare();shareWidget.init({isHorizontalLayout: 1,widgetIconSize: "32",widgetStyle: "square",theme: 'OpenSocialShareDefaultTheme',providers: { top: ["Facebook","LinkedIn","Twitter"]}});shareWidget.injectInterface(".oss-widget-interface");shareWidget.setWidgetTheme(".oss-widget-interface");
+        </script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d1caa98cc4d185c"></script>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>languages</title>
+    <link rel="stylesheet" href="./css/languageSelect.css">
+</head>
+<body>
+    <section class="main-section">
+        <div class="dropdown-container">
+            <div class="pm-bxLeftchat">
+                <div class="pm-leftUserimg">
+                    <img src="./images/botAvatar.png" class="img-responsive">
+                </div>
+                <div class="pm-leftInput">
+                    <p>Hi! I’m Jubi. </p>
+                </div>
+            </div>
+            <div class="pm-bxLeftchat">
+                <div class="pm-postImg">
+                    <a href="https://jubimoney.com/jubimoney/images/introGif.gif" target="_blank">
+                        <img src="https://jubimoney.com/jubimoney/images/introGif.gif" class="img-responsive">
+                    </a>
+                </div>
+            </div>
+            <div class="pm-bxLeftchat">
+                <div class="select-option pm-leftInput" id="showLanguage">
+                    <p>Select your Language</p>
+                    <div class="dropdown-icon-content">
+                        <img src="./images/dropdown-icon-black.png" alt="">
+                    </div>
+                </div>
+                <div class="dropdown-content pm-leftInput">
+                    <div class="language-list-content">
+                        <ul>
+                            <li class="language" id="english"><a href="javascript:void(0)">English</a></li>
+                            <li class="language" id="hindi"><a href="javascript:void(0)">Hindi ( हिंदी )</a></li>
+                            <li class="language" id="bengali"><a href="javascript:void(0)">Bengali ( বাঙালি )</a></li>
+                            <li class="language" id="tamil"><a href="javascript:void(0)">Tamil ( தமிழ் )</a></li>
+                            <li class="language" id="marathi"><a href="javascript:void(0)">Marathi ( मराठी )</a></li>
+                            <li class="language" id="kannada"><a href="javascript:void(0)">Kannada ( ಕನ್ನಡ )</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="pm-bxRightchat" style="visibility: visible; bottom: 10px;">
+                <div class="pm-rightInput">
+                    <div class="pm-arrowRightchat pm-arrow-right"></div>
+                    <p id="get-language"></p>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="pm-rightInput">
+                    <div class="pm-rightUserimg"><img src="./images/rightuser.png" class="img-responsive"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="pm-bxLeftchat lastReply">
+                <div class="pm-leftUserimg">
+                    <img src="./images/botAvatar.png" class="img-responsive">
+                </div>
+                <div class="pm-leftInput">
+                    <p>Personalising the experience for you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $('#showLanguage').click(function(){
+            $('.dropdown-content').show()
+        })
+        $('.language').click(function(){
+            if($('.language').children().is('a')){
+                console.log(this.id)
+                console.log($(this).text())
+                $(this).addClass('active');
+                $('.language').not(this).removeClass('active')
+
+                let getLanguage = $(this).text();
+                $('#get-language').text(getLanguage)
+                setTimeout(function(){
+                    $('.lastReply').show(100);
+                },500)
+            }
+        })
+    </script>
+</body>
+</html>

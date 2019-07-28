@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>JubiMoney - Personalised financial planner for every Indian</title>
+    <meta property="og:title" content="We only fear what we don’t know. Get your FREE personalised financial plan here to start your journey towards a bright financial future. ✨" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="css/jubimoney.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,900" rel="stylesheet">
+    <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onload="load()">
+    <section id="loading-section" style="display: block;">
+        <p>Please wait<img src="./images/loading_new.gif"></p>
+    </section>
+    <section class="secmain secmain_report secmainMobile" id="sec_webviewmain" style="display: none;">
+
+        <!-- <aside class="asideLeft">
+            <div class="logo">
+                <a href="javascript:void(0)"><img src="./images/logo.png" class="img-fluid"></a>
+            </div>
+            <div class="leftContent">
+                <h3>Here to upgrade<br> your relationship with money.</h3>
+                <p>From stress to joy.</p>
+            </div>
+            <div class="bgLeftpanel">
+                <img src="./images/graphic.png" class="img-fluid">
+            </div>
+        </aside> -->
+        <aside class="asideRight">
+            <section class="rightHeader">
+                <div class="titleReport" id="change-lang">
+                    <div class="moblogo">
+                        <a href="javascript:void(0)">
+                            <img src="./images/logoBlack.png" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="headerNav">
+                    <ul>
+                        <li>
+                            <select class="browser-default custom-select" id="change-langauge">
+                                <option value="1" selected>En</option>
+                                <option value="2">हिंदी</option>
+                            </select>
+                            <!-- <select class="browser-default custom-select" id="change-langauge">
+                                    <option value="1" selected>En</option>
+                                    <option value="2">हिंदी</option> -->
+                                    <!-- <option value="3">मराठी</option>
+                                    <option value="4">ಕನ್ನಡ</option>
+                                    <option value="5">தமிழ்</option> -->
+                                    <!-- <option value="3">বাংলা</option> -->
+                                <!-- </select> -->
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="jubiReports">
+                <div class="reportbx jubi-dear-deep">
+                    <div class="reportContent">
+                        <h5 id="username">Dear Deep,</h5>
+                        <!-- <hr> -->
+                        <p lang="eng" class="pEng">Our relationship with money doesn’t have to be  complicated.<br> Congratulations on taking the first step!</p>
+                        <p lang="hin" class="pHin">पैसों के साथ हमारा रिश्ता परेशानी से भरा नहीं होना चाहिए।<br>इसलिए पहला क़दम उठाने के लिए आपको ढेर सारी शुभकामनाएं! </p>
+                        <p lang="tam" class="pTam">பணத்துடனான உங்கள் உறவை சிக்கலில் நிரப்பக்கூடாது.<br>எனவே முதல் படி எடுக்க உங்களுக்கு பல விருப்பங்கள் உள்ளன!</p>
+                        <p lang="kannad" class="pKan">ಹಣದೊಂದಿಗಿನ ನಮ್ಮ ಸಂಬಂಧವು ತೊಂದರೆಯಿಂದ ತುಂಬಿರಬಾರದು.<br>ಆದ್ದರಿಂದ ಮೊದಲ ಹೆಜ್ಜೆ ಇಡಲು ನಿಮಗೆ ಅನೇಕ ಆಸೆಗಳಿವೆ!</p>
+                        <p lang="marathi" class="pMar">पैशाबरोबरचा आपला संबंध संकटात भरला जाऊ नये.<br>म्हणून तुम्हाला पहिले पाऊल उचलण्याची अनेक इच्छा आहेत!</p>
+                        <div class="reportContent-hr"></div>
+                        <div class="reportbx reportbxSlider">
+                            <article class="articleCarouselBox">
+                                <div class="streesjoybox">
+                                    <div class="stress" lang="eng">Stress</div>
+                                    <div class="stress" lang="hin">तनाव</div>
+                                    <div class="stress" lang="tam">மன அழுத்தம்</div>
+                                    <div class="stress" lang="kannad">ಒತ್ತಡ</div>
+                                    <div class="stress" lang="marathi">तणाव</div>
+                                    <div class="stressSadIcons">
+                                        <ul>
+                                            <li><img src="./images/stress-1.png" class="img-fluid"></li>
+                                            <li><img src="./images/stress-2.png" class="img-fluid"></li>
+                                            <li><img src="./images/stress-3.png" class="img-fluid"></li>
+                                            <li><img src="./images/stress-4.png" class="img-fluid"></li>
+                                            <li><img src="./images/stress-5.png" class="img-fluid"></li>
+                                        </ul>
+                                    </div>
+                                    <div class="sad" lang="eng">Joy</div>
+                                    <div class="sad" lang="hin">ख़ुशी</div>
+                                    <div class="sad" lang="tam">மகிழ்ச்சி</div>
+                                    <div class="sad" lang="kannad">ಸಂತೋಷ</div>
+                                    <div class="sad" lang="marathi">आनंद</div>
+                                </div>
+
+                                <div class="ReportsliderHandle">
+                                    <div id="streesjoySlider" class="ReportSliderLine">
+                                        <div class="ReportSliderLine_Pointer" style="left: 20%"></div>
+                                        <div class="reportslider-label" style="left: 20%">
+                                            <div class="you-are-here" lang="eng">
+                                                <div class="pointYouareHere"><img src="./images/arrow.png" class="img-fluid"></div>
+                                                You are here
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="captions" lang="eng">Let’s help you get closer to joy!</div>
+                                <div class="captions" lang="hin">आपको ख़ुशियों के और भी क़रीब ले जाने में हम आपकी मदद करेंगे! </div>
+                                <div class="captions" lang="tam">மகிழ்ச்சியுடன் நெருங்கிச் செல்ல நாங்கள் உங்களுக்கு உதவுகிறோம்!</div>
+                                <div class="captions" lang="kannad">ನಿಮ್ಮನ್ನು ಸಂತೋಷಕ್ಕೆ ಇನ್ನಷ್ಟು ಹತ್ತಿರವಾಗಿಸಲು ನಾವು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತೇವೆ!</div>
+                                <div class="captions" lang="marathi">आम्ही आपल्याला आनंदाच्या जवळ जाण्यात मदत करतो!</div>
+                            </article>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reportbx">
+                    <div class="reportContent">
+                        <div class="PlanBx">
+                            <div class="planBar">
+                                <h3 lang="eng">Emergency Fund</h3>
+                                <h3 lang="hin">इमरजेंसी फंड</h3>
+                                <h3 lang="tam">அவசர நிதி</h3>
+                                <h3 lang="kannad">ತುರ್ತು ನಿಧಿ</h3>
+                                <h3 lang="marathi">आणीबाणी निधी</h3>
+                                <img src="./images/kidneyformac.png" class="img-fluid">
+                            </div>
+                            <div class="currentIdeal">
+                                <ul>
+                                    <li>
+                                        <p lang="eng">Current:</p>
+                                        <p lang="hin">फंड अभी है:</p>
+                                        <p lang="tam">என்றால் இப்போது:</p>
+                                        <p lang="kannad">ವವೇಳೆ ಈಗ:</p>
+                                        <p lang="marathi">करंट फंडः</p>
+                                        <input id="emergencycurrent" disabled>
+                                    </li>
+                                    <li>
+                                        <p lang="eng">Ideal:</p>
+                                        <p lang="hin">फंड होना चाहिए:</p>
+                                        <p lang="tam">இருக்க வேண்டும்:</p>
+                                        <p lang="kannad">ಆಗಿರಬೇಕು:</p>
+                                        <p lang="marathi">के आदर्श:</p>
+                                        <input id="emergencyideal" disabled>
+                                    </li>
+                                </ul>
+                                <p id="emergency-fund"></p>
+                                <p lang="eng">This fund should be accessible quickly when you have a need for it.</p>
+                                <p lang="eng">This could be cash in hand or bank.</p>
+                                <p lang="eng">You can also invest it in liquid mutual funds as they have no lock-in period.</p>
+                                <p lang="hin">ज़रूरत के समय ये फंड आपके पास तुरंत इस्तेमाल के लिए होना चाहिए।</p>
+                                <p lang="hin">ये फंड आपके पास नकद या बैंक में होना चाहिए।</p>
+                                <p lang="hin">आप इसे लिक्विड म्युचुअल फंड्स में भी इन्वेस्ट कर सकते हैं क्योंकि इसमें लॉक-इन पीरियड नहीं होता है।</p>
+                                <p lang="tam">உங்களுக்குத் தேவைப்படும்போது பயன்படுத்த பணம் உங்களிடம் இருக்க வேண்டும்.</p>
+                                <p lang="tam">இந்த பணத்தை நீங்கள் பணமாகவோ அல்லது வங்கியில் வைத்திருக்க வேண்டும்.</p>
+                                <p lang="tam">பூட்டுதல் காலம் இல்லாததால், நீங்கள் திரவ மியூச்சுவல் ஃபண்டுகளிலும் முதலீடு செய்யலாம்.</p>
+                                <p lang="kannad">ಈ ಹಣವನ್ನು ನೀವು ಅಗತ್ಯವಿರುವ ಸಮಯದಲ್ಲಿ ಬಳಸಲು ಇರಬೇಕು.</p>
+                                <p lang="kannad">ನೀವು ಈ ಹಣವನ್ನು ನಗದು ಅಥವಾ ಬ್ಯಾಂಕಿನಲ್ಲಿ ಹೊಂದಿರಬೇಕು.</p>
+                                <p lang="kannad">ಲಾಕ್-ಇನ್ ಅವಧಿಯನ್ನು ಹೊಂದಿರದ ಕಾರಣ ನೀವು ಲಿಕ್ವಿಡ್ ಮ್ಯೂಚುವಲ್ ಫಂಡ್‌ನಲ್ಲಿ ಸಹ ಹೂಡಿಕೆ ಮಾಡಬಹುದು.</p>
+                                <p lang="marathi">जेव्हा आवश्यक असेल तेव्हा वापरण्यासाठी हा पैसा आपल्याजवळ असावा.</p>
+                                <p lang="marathi">आपल्याकडे हे पैसे रोख किंवा बँकेत असणे आवश्यक आहे.</p>
+                                <p lang="marathi">लॉक-इन कालावधी नसल्यामुळे आपण लिक्विड म्युच्युअल फंडामध्ये देखील गुंतवणूक करू शकता.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="needHelp" id="needHelp">
+                        <a href="javascript:void(0)" id="bt-popup">Need help</a>
+                    </div>
+                    <!-- <div class="doingBetter">
+                        <p lang="eng">You&apos;re doing better than <span>23%</span> indians in the JubiMoney test!</p>
+                        <p lang="hin">जुबीमनी परीक्षा में आप <span>२३%</span> भारतीय से बेहतर कर रहे है |</p>
+                        <p lang="tam"></p>
+                        <p lang="kannad"></p>
+                    </div> -->
+                </div>
+                <div class="reportbx reportbx-termInsurance">
+                    <div class="reportContent">
+                        <div class="PlanBx">
+                            <div class="planBar">
+                                <h3 lang="eng">Term Insurance</h3>
+                                <h3 lang="hin">टर्म इंश्योरेन्स</h3>
+                                <h3 lang="tam">அவ்வப்போது உத்தரவாதம்</h3>
+                                <h3 lang="kannad">ಅವಧಿಯ ಭರವಸೆ</h3>
+                                <h3 lang="marathi">आवधिक आश्वासन</h3>
+                                <img src="./images/healthcarecosts forfamily.png" class="img-fluid">
+                            </div>
+                            <div class="currentIdeal">
+                                <ul>
+                                    <li>
+                                        <p lang="eng">Current:</p>
+                                        <p lang="hin">अभी:</p>
+                                        <p lang="tam">என்றால் இப்போது:</p>
+                                        <p lang="kannad">ವವೇಳೆ ಈಗ:</p>
+                                        <p lang="marathi">जर आता</p>
+                                        <input id="termcurrent" disabled>
+                                    </li>
+                                    <li>
+                                        <p lang="eng">Ideal:</p>
+                                        <p lang="hin">होना चाहिए:</p>
+                                        <p lang="tam">இருக்க வேண்டும்:</p>
+                                        <p lang="kannad">ಆಗಿರಬೇಕು:</p>
+                                        <p lang="marathi">असावेः</p>
+                                        <input id="termideal" disabled>
+                                    </li>
+                                </ul>
+                                <p id="term-insurance"></p>
+                                <p lang="eng">We know life to be unpredictable.</p>
+                                <p lang="eng">Term insurance is the way you look out for your family even when you’re not around.</p>
+                                <p lang="eng">And, you get a personal accident and a critical illness policy so that an accident or an illness such as cancer doesn't add to the financial stress.</p>
+                                <p lang="hin">हम जानते हैं कि ज़िन्दगी के बारे में अनुमान लगा पाना मुश्किल है। </p>
+                                <p lang="hin">टर्म इंश्योरेन्स ही एक ऐसा तरीक़ा है जिससे आपके बाद भी आपका परिवार अपनी देखभाल कर सकता है।</p>
+                                <p lang="hin">आपको पर्सनल एक्सीडेंट और क्रिटिकल इलनेस पॉलिसी भी मिल सकती है ताकि किसी दुर्घटना या कैंसर जैसी बीमारी के समय आर्थिक परेशानी न आए।</p>
+                                <p lang="tam">ஆயுட்காலம் கணிப்பது கடினம் என்பதை நாங்கள் அறிவோம்.</p>
+                                <p lang="tam">கால காப்பீடு என்பது உங்கள் குடும்பம் உங்களைப் பார்த்துக்கொள்வதாகும்.</p>
+                                <p lang="tam">விபத்து அல்லது புற்றுநோய் தொடர்பான நோய்கள் தொடர்பான எந்தவொரு நிதி சிக்கல்களையும் தவிர்க்க நீங்கள் தனிப்பட்ட விபத்து மற்றும் சிக்கலான நோய்க் கொள்கையையும் பெறலாம்.</p>
+                                <p lang="kannad">ಜೀವಿತಾವಧಿಯನ್ನು ಅಂದಾಜು ಮಾಡುವುದು ನಿಮಗೆ ಕಷ್ಟ ಎಂದು ನಮಗೆ ತಿಳಿದಿದೆ.</p>
+                                <p lang="kannad">ಟರ್ಮ್ ಇನ್ಶುರೆನ್ಸ್ ಎನ್ನುವುದು ನಿಮ್ಮ ಕುಟುಂಬವು ನಿಮ್ಮ ನಂತರವೂ ನಿಮ್ಮನ್ನು ನೋಡಿಕೊಳ್ಳುತ್ತದೆ.</p>
+                                <p lang="kannad">ಅಪಘಾತ ಅಥವಾ ಕ್ಯಾನ್ಸರ್ ಸಂಬಂಧಿತ ಅನಾರೋಗ್ಯದ ಸಮಯದಲ್ಲಿ ಯಾವುದೇ ಹಣಕಾಸಿನ ಸಮಸ್ಯೆಗಳಾಗದಂತೆ ನೀವು ವೈಯಕ್ತಿಕ ಅಪಘಾತ ಮತ್ತು ಗಂಭೀರ ಅನಾರೋಗ್ಯ ನೀತಿಯನ್ನು ಸಹ ಪಡೆಯಬಹುದು.</p>
+                                <p lang="marathi">जीवन प्रत्याशाचा अंदाज घेणे कठिण आहे हे आम्हाला माहित आहे.</p>
+                                <p lang="marathi">टर्म इन्शुरन्स म्हणजे आपले कुटुंब आपल्यानंतर आपले काळजी घेते.</p>
+                                <p lang="marathi">दुर्घटना किंवा कर्करोगाशी संबंधित आजारांमधील कोणत्याही आर्थिक समस्या टाळण्यासाठी आपण वैयक्तिक अपघात आणि गंभीर आजारपणाची पॉलिसी देखील मिळवू शकता.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="needHelp" id="needHelp">
+                        <a href="javascript:void(0)" id="bt-popup2">Need help</a>
+                    </div>
+                </div>
+                <div class="reportbx reportbx-healthInsurance">
+                    <div class="reportContent">
+                        <div class="PlanBx">
+                            <div class="planBar">
+                                <h3 lang="eng">HEALTH INSURANCE PLAN</h3>
+                                <h3 lang="hin">हेल्थ इंश्योरेंस प्लान</h3>
+                                <h3 lang="tam">சுகாதார காப்பீட்டு திட்டம்</h3>
+                                <h3 lang="kannad">ಆರೋಗ್ಯ ವಿಮೆ ಯೋಜನೆ</h3>
+                                <h3 lang="marathi">आरोग्य विमा योजना</h3>
+                                <img src="./images/triptoHome.png" class="img-fluid health-img" style="margin-top: 5px;height: 44px;max-width: 138px;">
+                            </div>
+                            <div class="currentIdeal">
+                                <ul>
+                                    <li>
+                                        <p lang="eng">Current</p>
+                                        <p lang="hin">अभी :</p>
+                                        <p lang="tam">என்றால் இப்போது:</p>
+                                        <p lang="kannad">ವವೇಳೆ ಈಗ:</p>
+                                        <p lang="marathi">करंट फंडः</p>
+                                        <input id="healthcurrent" disabled>
+                                    </li>
+                                    <li>
+                                        <p lang="eng">Ideal</p>
+                                        <p lang="hin">होना चाहिए:</p>
+                                        <p lang="tam">இருக்க வேண்டும்:</p>
+                                        <p lang="kannad">ಆಗಿರಬೇಕು:</p>
+                                        <p lang="marathi">असावेः</p>
+                                        <input id="healthideal" disabled>
+                                    </li>
+                                </ul>
+                                <p id="health-insurance"></p>
+                                <p lang="eng">The earlier you start this insurance, the better - as age is an important factor to pay a lesser premium.</p>
+                                <p lang="eng">You must buy a health insurance plan even if your company covers you for a certain sum.</p>
+                                <p lang="hin">आप यह इंश्योरेन्स जितनी जल्दी लेंगे, आपके लिए उतना ही बेहतर होगा- क्योंकि कम प्रीमियम के लिए उम्र से बहुत ज़्यादा फ़र्क़ पड़ता है।</p>
+                                <p lang="hin">अगर आपकी कंपनी से आपको तय राशि तक हेल्थ इंश्योरेंस की सुविधा मिलती है तब भी आपको हेल्थ इंश्योरेंस ख़रीदना चाहिए।</p>
+                                <p lang="tam">இந்த காப்பீட்டை விரைவில் நீங்கள் எடுத்துக் கொண்டால், அது சிறப்பாக இருக்கும் - ஏனென்றால் குறைந்தபட்ச பிரீமியத்திற்கு உங்கள் வயது மிகவும் முக்கியமானது.</p>
+                                <p lang="tam">உங்கள் நிறுவனம் பெற்ற தொகையிலிருந்து நீங்கள் சுகாதார காப்பீட்டைப் பெற்றிருந்தால், நீங்கள் இன்னும் சுகாதார காப்பீட்டை எடுக்க வேண்டும்.</p>
+                                <p lang="kannad">ಈ ವಿಮೆಯನ್ನು ನೀವು ಎಷ್ಟು ಬೇಗನೆ ತೆಗೆದುಕೊಳ್ಳುತ್ತೀರೋ ಅದು ನಿಮಗೆ ಉತ್ತಮವಾಗಿರುತ್ತದೆ - ಏಕೆಂದರೆ ಕಡಿಮೆ ಪ್ರೀಮಿಯಂಗೆ ನಿಮ್ಮ ವಯಸ್ಸು ಬಹಳ ಮುಖ್ಯ.</p>
+                                <p lang="kannad">ನಿಮ್ಮ ಕಂಪನಿಯು ನೀವು ಪಡೆಯುವ ಮೊತ್ತದಿಂದ ಆರೋಗ್ಯ ವಿಮೆಯನ್ನು ಪಡೆದರೆ, ನೀವು ಇನ್ನೂ ಆರೋಗ್ಯ ವಿಮೆಯನ್ನು ತೆಗೆದುಕೊಳ್ಳಬೇಕು.</p>
+                                <p lang="marathi">जितक्या लवकर आपण हे विमा घेता, तितकेच चांगले होईल - कारण कमीतकमी प्रीमियमसाठी आपले वय खूप महत्वाचे आहे.</p>
+                                <p lang="marathi">आपल्या कंपनीने आपल्याला प्राप्त झालेल्या रकमेतून आरोग्य विमा प्राप्त केला तर आपण अद्याप आरोग्य विमा घ्यावा.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="needHelp" id="needHelp">
+                        <a href="javascript:void(0)" id="bt-popup3">Need help</a>
+                    </div>
+                    <!-- <div class="doingBetter"> -->
+                        <!-- <p lang="eng">You&apos;re doing better than <span>23%</span> indians in the JubiMoney test!</p>
+                        <p lang="hin">जुबीमनी परीक्षा में आप <span>२३%</span> भारतीय से बेहतर कर रहे है |</p> -->
+                    <!-- </div> -->
+                </div>
+                <div class="reportbx reportbx-investment">
+                    <div class="reportContent">
+                        <div class="PlanBx">
+                            <div class="planBar">
+                                <h3 lang="eng">Investment</h3>
+                                <h3 lang="hin">इन्वेस्टमेंट</h3>
+                                <h3 lang="tam">முதலீட்டு</h3>
+                                <h3 lang="kannad">ಹೂಡಿಕೆ</h3>
+                                <h3 lang="marathi">गुंतवणूक</h3>
+                                <img src="./images/mountainsarecalling.png" class="img-fluid" style="margin-top: 2px;height: 46px;">
+                            </div>
+                            <div class="currentIdeal">
+                                <ul>
+                                    <li>
+                                        <p lang="eng">Current</p>
+                                        <p lang="hin">अभी :</p>
+                                        <p lang="tam">என்றால் இப்போது:</p>
+                                        <p lang="kannad">ವವೇಳೆ ಈಗ:</p>
+                                        <p lang="marathi">आता:</p>
+                                        <input id="investmentcurrent" disabled>
+                                    </li>
+                                    <li>
+                                        <p lang="eng">Ideal</p>
+                                        <p lang="hin">होना चाहिए :</p>
+                                        <p lang="tam">இருக்க வேண்டும்:</p>
+                                        <p lang="kannad">ಆಗಿರಬೇಕು:</p>
+                                        <p lang="marathi">प्रति महिना:</p>
+                                        <input id="investmentideal" disabled>
+                                    </li>
+                                </ul>
+                                <div class="investment-textContent" id="investment-textContent">
+
+                                </div>
+                                <!-- <p lang="eng">Invest the mentioned ideal amount monthly at the start of the month to avoid spending it all.</p>
+                                    <p lang="eng">Investing is how you beat inflation and see the power of compounding work its wonders!</p>
+                                    <p lang="eng">It is okay to start small but important to start today.</p>
+                                    <p lang="hin">बताई गई राशि के बराबर हर महीने के शुरुआत में सारे पैसे ख़र्च होने से पहले ही इन्वेस्ट करें।</p>
+                                    <p lang="hin">पैसे इन्वेस्ट करके ही आप महँगाई से बच सकते हैं और अपने पैसे को बढ़ते हुए भी देख सकते हैं।</p>
+                                    <p lang="hin">कम राशि से शुरू करने में कोई बुराई नहीं है लेकिन ज़रूरी है कि आप आज ही शुरू करें।</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="needHelp" id="needHelp">
+                        <a href="javascript:void(0)" id="bt-popup4">Need help</a>
+                    </div>
+                </div>
+                <div class="reportbx reportbx-borrowing">
+                    <div class="reportContent">
+                        <div class="PlanBx">
+                            <div class="planBar">
+                                <h3 lang="eng">BORROWING</h3>
+                                <h3 lang="hin">लोन के लिए</h3>
+                                <h3 lang="tam">கடன்களுக்கு</h3>
+                                <h3 lang="kannad">ಸಾಲಕ್ಕಾಗಿ</h3>
+                                <h3 lang="marathi">कर्जासाठी</h3>
+                                <img src="./images/monthendBlues.png" class="img-fluid" style="margin: 3px  0 0 0;">
+                            </div>
+                            <div class="currentIdeal">
+                                <ul>
+                                    <li>
+                                        <p lang="eng">Current</p>
+                                        <p lang="hin">अभी :</p>
+                                        <p lang="tam">என்றால் இப்போது:</p>
+                                        <p lang="kannad">ವವೇಳೆ ಈಗ:</p>
+                                        <p lang="marathi">आता</p>
+                                        <input id="borrowcurrent" disabled>
+                                    </li>
+                                    <li>
+                                        <p lang="eng">Ideal</p>
+                                        <p lang="hin">होना चाहिए :</p>
+                                        <p lang="tam">இருக்க வேண்டும்:</p>
+                                        <p lang="kannad">ಆಗಿರಬೇಕು:</p>
+                                        <p lang="marathi">असावी:</p>
+                                        <input id="borrowideal" disabled>
+                                    </li>
+                                </ul>
+                                <p lang="eng">Your total monthly EMI’s shouldn’t exceed this amount .</p>
+                                <p lang="eng">This is to make sure you’re able to repay your debts on time without it making your life stressful.</p>
+                                <p lang="hin">आपकी मासिक ईएमआई इस राशि से ज़्यादा नहीं होनी चाहिए।.</p>
+                                <p lang="hin">इससे ज़िन्दगी में बिना किसी परेशानी के आप अपना लोन आसानी से चुका सकेंगे। </p>
+                                <p lang="tam">உங்கள் மாதாந்திர ஈ.எம்.ஐ மேலே உள்ள தொகையை விட அதிகமாக இருக்கக்கூடாது.</p>
+                                <p lang="tam">இதன் மூலம் எந்தவொரு நிபந்தனையும் இல்லாமல் உங்கள் கடன் திருப்பிச் செலுத்துதலை எளிதாக திருப்பிச் செலுத்தலாம்.</p>
+                                <p lang="kannad">ನಿಮ್ಮ ಮಾಸಿಕ ಇಎಂಐ ಮೇಲೆ ನೀಡಲಾದ ಮೊತ್ತಕ್ಕಿಂತ ಹೆಚ್ಚಿರಬಾರದು.</p>
+                                <p lang="kannad">ಇದರೊಂದಿಗೆ ನೀವು ಜೀವನದಲ್ಲಿ ನಿಮ್ಮ ಸಾಲವನ್ನು ಯಾವುದೇ ತೊಂದರೆ ಇಲ್ಲದೆ ಸುಲಭವಾಗಿ ಮರುಪಾವತಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತದೆ.</p>
+                                <p lang="marathi">आपली मासिक ईएमआय उपरोक्त रक्कमपेक्षा अधिक नसावी.</p>
+                                <p lang="marathi">यासह आपण कोणत्याही परिस्थितीशिवाय आपल्या कर्जाची परतफेड सहजपणे परत करू शकाल.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="needHelp" id="needHelp">
+                        <a href="javascript:void(0)" id="bt-popup5">Need help</a>
+                    </div>
+                </div>
+                <div id='home-sec' class="reportbx reportbx-home">
+                    <div class="reportContent">
+                        <div class="PlanBx">
+                            <div class="planBar">
+                                <h3 lang="eng">Home loan</h3>
+                                <h3 lang="hin">होम लोन</h3>
+                                <h3 lang="tam">வீட்டுக் கடன்கள்</h3>
+                                <h3 lang="kannad">ಗೃಹ ಸಾಲ</h3>
+                                <h3 lang="marathi">गृह कर्जे</h3>
+                                <img src="./images/home.png" class="img-fluid" style="margin: 3px 0 0 0;">
+                            </div>
+                            <div class="currentIdeal">
+                                <ul>
+                                    <li>
+                                        <p lang="eng" id="homecurrent">Current</p>
+                                        <p lang="hin">अभी :</p>
+                                        <p lang="tam">என்றால் இப்போது:</p>
+                                        <p lang="kannad">ವವೇಳೆ ಈಗ:</p>
+                                        <p lang="marathi">आता</p>
+                                        <input value="0" disabled>
+                                    </li>
+                                    <li>
+                                        <p lang="eng" id="">Ideal</p>
+                                        <p lang="hin">होना चाहिए :</p>
+                                        <p lang="tam">இருக்க வேண்டும்:</p>
+                                        <p lang="kannad">ಆಗಿರಬೇಕು:</p>
+                                        <p lang="marathi">असावी:</p>
+                                        <input id="homeideal" value="" disabled>
+                                    </li>
+                                </ul>
+                                <p id="home-loan"></p>
+                                <p lang="eng">This amount will increase if you make a joint application alongside another earning member of your family.</p>
+                                <p lang="eng">Make sure the monthly EMI doesn’t exceed the ideal amount mentioned above in the borrowings column.</p>
+                                <p lang="eng" style="margin-bottom: 15px;">A credit score of 750+ gets you the best home loan options.</p>
+                                <p lang="hin">अगर आप अपने परिवार से किसी कमाने वाले सदस्य का जॉइंट एप्लीकेशन (अर्ज़ी) भरते हैं तो यह राशि बढ़ जाएगी।</p>
+                                <p lang="hin">इस बात का ध्यान रखना होगा कि मासिक ईएमआई की राशि लोन वाले कॉलम में बताई गई राशि से ज़्यादा न हो। </p>
+                                <p lang="hin" style="margin-bottom: 15px;">750+ के क्रेडिट स्कोर पर आपको सबसे अच्छे होम लोन के विकल्प मिलेंगे।</p>
+                                <p lang="tam">உங்கள் குடும்பத்தின் சம்பாதிக்கும் உறுப்பினரின் கூட்டு விண்ணப்பத்தை நீங்கள் பூர்த்தி செய்தால், இந்த தொகை அதிகரிக்கும்.</p>
+                                <p lang="tam">கிரெடிட் நெடுவரிசையில் குறிப்பிடப்பட்டுள்ள தொகையை மாதாந்திர ஈ.எம்.ஐ தொகை தாண்டாது என்பதை உறுதிப்படுத்த வேண்டும்.</p>
+                                <p lang="tam" style="margin-bottom: 15px;">750+ கிரெடிட் ஸ்கோரில் சிறந்த வீட்டுக் கடன் விருப்பத்தைப் பெறுவீர்கள்.</p>
+                                <p lang="kannad">ನಿಮ್ಮ ಕುಟುಂಬದಿಂದ ಗಳಿಸುವ ಸದಸ್ಯರ ಜಂಟಿ ಅರ್ಜಿಯನ್ನು ನೀವು ಭರ್ತಿ ಮಾಡಿದರೆ, ಈ ಮೊತ್ತವು ಹೆಚ್ಚಾಗುತ್ತದೆ.</p>
+                                <p lang="kannad">ಮಾಸಿಕ ಇಎಂಐ ಮೊತ್ತವು ಸಾಲದ ಅಂಕಣದಲ್ಲಿ ಹೇಳಿರುವ ಮೊತ್ತವನ್ನು ಮೀರುವುದಿಲ್ಲ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಬೇಕು.</p>
+                                <p lang="kannad" style="margin-bottom: 15px;">750+ ಕ್ರೆಡಿಟ್ ಸ್ಕೋರ್‌ನಲ್ಲಿ ನೀವು ಅತ್ಯುತ್ತಮ ಗೃಹ ಸಾಲ ಆಯ್ಕೆಗಳನ್ನು ಪಡೆಯುತ್ತೀರಿ.</p>
+                                <p lang="marathi">आपण आपल्या कुटुंबातील कमाई सदस्याचा संयुक्त अनुप्रयोग भरल्यास, ही रक्कम वाढेल.</p>
+                                <p lang="marathi">कर्जाच्या स्तंभात नमूद केलेल्या रकमेपेक्षा मासिक ईएमआय रक्कम ओलांडली जाणार नाही याची आपल्याला खात्री करणे आवश्यक आहे.</p>
+                                <p lang="marathi" style="margin-bottom: 15px;">750+ क्रेडिट स्कोरवर आपल्याला सर्वोत्तम गृह कर्ज पर्याय मिळतात.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="needHelp" id="needHelp">
+                        <a href="javascript:void(0)" id="bt-popup6">Need help</a>
+                    </div>
+                </div>
+            </section>
+            <section class="footer">
+                <div class="foottop">
+                    <div class="foottopContent">
+                        <p lang="eng">
+                            The plan uses a rule of thumb to make suggestions, it’s good to review your plan over time and understand what’s the best way to navigate your personal circumstances and be financially free!
+                        </p>
+                        <p lang="hin">
+                            इस रिपोर्ट में अनुभव के आधार पर ही सुझाव दिए गए हैं, समय समय पर अपने रिपोर्ट को देखते रहना अच्छा होता है। आप यह भी देख सकते हैं कि आपकी निजी परेशानियों से निकलने के लिए सबसे अच्छा रास्ता कौन सा है और आर्थिक परेशानियों से छुटकारा भी पा सकते हैं।
+                        </p>
+                        <p lang="tam">
+                            இந்த அறிக்கையில், அனுபவ அடிப்படையிலான பரிந்துரைகள் வழங்கப்படுகின்றன, உங்கள் அறிக்கையை அவ்வப்போது பார்ப்பது நல்லது. உங்கள் தனிப்பட்ட பிரச்சினைகளிலிருந்து விடுபடுவதற்கும் நிதி சிக்கல்களிலிருந்து விடுபடுவதற்கும் சிறந்த வழி எது என்பதை நீங்கள் காணலாம். இது உதவியாக இருந்தால் (புன்னகைக்கிறீர்கள்) புரிந்து கொள்ள எங்களுக்கு உதவுங்கள்.
+                            சொல்லுங்கள், அவர் உங்களுக்கு உதவியாரா? சந்தேகம் இருக்கிறதா?
+                            சில கேள்விகள்?
+                        </p>
+                        <p lang="kannad">
+                            ಈ ವರದಿಯಲ್ಲಿ, ಅನುಭವದ ಆಧಾರದ ಮೇಲೆ ಸಲಹೆಗಳನ್ನು ನೀಡಲಾಗಿದೆ, ನಿಮ್ಮ ವರದಿಯನ್ನು ಕಾಲಕಾಲಕ್ಕೆ ನೋಡುವುದು ಒಳ್ಳೆಯದು. ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಸಮಸ್ಯೆಗಳನ್ನು ತೊಡೆದುಹಾಕಲು ಮತ್ತು ಆರ್ಥಿಕ ತೊಂದರೆಗಳನ್ನು ತೊಡೆದುಹಾಕಲು ಉತ್ತಮ ಮಾರ್ಗ ಯಾವುದು ಎಂಬುದನ್ನು ನೀವು ನೋಡಬಹುದು.
+                        </p>
+                        <p lang="marathi">
+                            या अहवालात, अनुभवावर आधारित सूचना दिल्या जातात, वेळोवेळी आपला अहवाल पहाणे चांगले आहे. आपल्या वैयक्तिक समस्यांपासून मुक्त होण्याचा आणि आर्थिक अडचणींपासून मुक्त होण्याचा सर्वात चांगला मार्ग कोणता आहे हे आपण पाहू शकता.
+                        </p>
+                    </div>
+                    <!-- <div class="helpus">
+                        <h5 lang="eng">Help us understand if this was helpful</h5>
+                        <h5 lang="hin">हमें बताइए, क्या इससे आपकी कोई मदद हुई|</h5>
+                        <h5 lang="tam"></h5>
+                        <h5 lang="kannad">ನಮಗೆ ಹೇಳಿ, ಇದು ನಿಮಗೆ ಸಹಾಯ ಮಾಡಿದೆ?</h5>
+                        <ul>
+                            <li><img src="./images/helpus-1.png" class="img-fluid"></li>
+                            <li><img src="./images/helpus-2.png" class="img-fluid" style="max-width: 24px;"></li>
+                            <li><img src="./images/helpus-3.png" class="img-fluid"></li>
+                        </ul>
+                    </div> -->
+                    <!-- <div class="otherquestion" lang="eng">Have a doubt? <a href="javascript:void(0)"> ASK ME.</a></div>
+                    <div class="otherquestion" lang="hin">कोई सवाल है? <a href="javascript:void(0)"> मुझसे पूछिए|</a></div>
+                    <div class="otherquestion" lang="tam"> <a href="javascript:void(0)"> </a></div>
+                    <div class="otherquestion" lang="kannad">ಯಾವುದೇ ಪ್ರಶ್ನೆಗಳು? <a href="javascript:void(0)"> ನನ್ನನ್ನು ಕೇಳಿ</a></div> -->
+                </div>
+                <div class="footerBtm">
+                    <!-- <h5 lang="eng">Share on:</h5>
+                    <h5 lang="hin">दोस्तों के साथ जुबीमनी परीक्षा साझा करें!</h5>
+                    <ul>
+                        <li><img src="./images/f-call.png" class="img-fluid"></li>
+                        <li><img src="./images/f-linkedin.png" class="img-fluid"></li>
+                        <li><img src="./images/f-twitter.png" class="img-fluid"></li>
+                    </ul>
+                    <a href=""> feedback</a> -->
+                    <div class="socialShareBx">
+                        <div class="addthis_inline_share_toolbox"></div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </section>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/jubimoney.js"></script>
+
+    <!-- Type Form -->
+
+    <script src="https://embed.typeform.com/embed.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        let popup1;
+        window.addEventListener('DOMContentLoaded', function () {
+            // When instantiating a popup embed, you must provide the URL
+            // of your typeform and your desired embed settings. If you don't
+            // provide any settings, a default 'popup' embed is instantiated.
+            popup1 = window.typeformEmbed.makePopup('https://jubiai.typeform.com/to/eud82e', {
+                hideHeaders: true,
+                hideFooter: true
+            });
+        })
+
+        // Now we bind our buttons to open our previously instantiated
+        // embedded typeforms when clicked
+        document.getElementById('bt-popup').addEventListener('click', function () {
+            popup1.open();
+        });
+        document.getElementById('bt-popup2').addEventListener('click', function () {
+            popup1.open();
+        });
+        document.getElementById('bt-popup3').addEventListener('click', function () {
+            popup1.open();
+        });
+        document.getElementById('bt-popup4').addEventListener('click', function () {
+            popup1.open();
+        });
+        document.getElementById('bt-popup5').addEventListener('click', function () {
+            popup1.open();
+        });
+        document.getElementById('bt-popup6').addEventListener('click', function () {
+            popup1.open();
+        });
+    </script>
+
+    <!-- Type Form -->
+
+    <!-- addThis -->
+    <script type="text/javascript">
+        var shareWidget = new OpenSocialShare();shareWidget.init({isHorizontalLayout: 1,widgetIconSize: "32",widgetStyle: "square",theme: 'OpenSocialShareDefaultTheme',providers: { top: ["Facebook","LinkedIn","Twitter"]}});shareWidget.injectInterface(".oss-widget-interface");shareWidget.setWidgetTheme(".oss-widget-interface");
+    </script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d1caa98cc4d185c"></script>
+    <!-- addThis -->
+    <script type="text/javascript">
+        var reportData;
+        // document.getElementById('loading-section').style.display="block";
+        $(document).on('change', '#change-langauge', function() {
+            console.log("here langSelection")
+            console.log($(this).val()); // the selected options’s value
+            if ($(this).val() == 1) {
+                console.log("eng")
+                $('[lang="eng"]').show();
+                $('[lang="hin"]').hide();
+                $('[lang="tam"]').hide();
+                $('[lang="kannad"]').hide();
+                $('[lang="marathi"]').hide();
+            }
+            if ($(this).val() == 2) {
+                console.log("hin")
+                $('[lang="hin"]').show();
+                $('[lang="eng"]').hide();
+                $('[lang="tam"]').hide();
+                $('[lang="kannad"]').hide();
+                $('[lang="marathi"]').hide();
+            }
+            if ($(this).val() == 3) {
+                $('[lang="marathi"]').show();
+                $('[lang="kannad"]').hide();
+                $('[lang="tam"]').hide();
+                $('[lang="hin"]').hide();
+                $('[lang="eng"]').hide();
+            }
+            if ($(this).val() == 4) {
+                console.log("kannad")
+                $('[lang="kannad"]').show();
+                $('[lang="tam"]').hide();
+                $('[lang="hin"]').hide();
+                $('[lang="eng"]').hide();
+                $('[lang="marathi"]').hide();
+            }
+            if ($(this).val() == 5) {
+                console.log("tam")
+                $('[lang="tam"]').show();
+                $('[lang="kannad"]').hide();
+                $('[lang="hin"]').hide();
+                $('[lang="eng"]').hide();
+                $('[lang="marathi"]').hide();
+            }
+
+            langMessage($(this).val())
+                // if($(this).val() == 2) {
+                //         document.getElementById('username').innerHTML= 'प्रिय ' + res.name + ',';    
+                //     } else { 
+                //         document.getElementById('username').innerHTML= 'Dear ' + res.name + ',';
+                //         document.getElementById('emergency-fund').innerHTML=res.english.emergencyFund;
+                //     }
+
+            // if you want to do stuff based on the OPTION element:
+            var opt = $(this).find('option:selected')[0];
+            // use switch or if/else etc.
+        });
+
+        $('#change-lang').change(function() {
+
+
+            if ($(this).val == 1) {
+                console.log("hey")
+                $('[lang="hin"]').toggle();
+                $('[lang="eng"]').toggle();
+                $('[lang="tam"]').toggle();
+                $('[lang="kannad"]').toggle();
+                $('[lang="marathi"]').toggle();
+            }
+            if ($(this).val == 2) {
+                $('[lang="hin"]').toggle();
+                $('[lang="eng"]').toggle();
+                $('[lang="tam"]').toggle();
+                $('[lang="kannad"]').toggle();
+                $('[lang="marathi"]').toggle();
+            }
+            if ($(this).val == 3) {
+                $('[lang="hin"]').toggle();
+                $('[lang="eng"]').toggle();
+                $('[lang="tam"]').toggle();
+                $('[lang="kannad"]').toggle();
+                $('[lang="marathi"]').toggle();
+            }
+            if ($(this).val == 4) {
+                $('[lang="hin"]').toggle();
+                $('[lang="eng"]').toggle();
+                $('[lang="tam"]').toggle();
+                $('[lang="kannad"]').toggle();
+                $('[lang="marathi"]').toggle();
+            }
+            if ($(this).val == 5) {
+                $('[lang="hin"]').toggle();
+                $('[lang="eng"]').toggle();
+                $('[lang="tam"]').toggle();
+                $('[lang="kannad"]').toggle();
+                $('[lang="marathi"]').toggle();
+            }
+        })
+
+
+
+        function switchlang(argument) {
+            console.log("langueges")
+            document.getElementById("langueges").classList.toggle("show");
+            $('#langueges').click(function() {
+                $('[lang="es"]').toggle();
+                $('[lang="en"]').toggle();
+            });
+        }
+
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+
+        function load() {
+            // show loader
+            document.getElementById('loading-section').style.display = "block";
+            document.getElementById('sec_webviewmain').style.display = "none";
+            const urlParams = new URLSearchParams(window.location.search);
+            const myParam = urlParams.get('id');
+            console.log("urlParams" + myParam)
+
+            console.log("here")
+            $.ajax({
+                //   url: "http://localhost:9898/data",
+                url: "https://development.jubi.ai/jubimoneyreport/data",
+                type: 'json',
+                method: 'post',
+                data: {
+                    id: myParam
+                },
+                error: function(err) {
+                    console.log(err)
+                },
+                cache: false,
+                success: function(result) {
+                    console.log(JSON.stringify(result, null, 3))
+                        // var d = '<div id="' +result.tags.name+ '" >'+ result.tags.name +'</div>'
+                    var res = JSON.parse(result.data)
+                    reportData = res
+                        // $("#username").replaceWith(result.tags.name);
+                        // $("#ideal").replaceWith(result.tags.ideal);
+                    console.log(typeof res)
+                    if (result.status === 'success') {
+
+                        console.log("lang " + res.lang)
+                        // $("#change-langauge").val(res.lang).attr("selected", "selected");
+                        $("#change-langauge").val(res.lang).change();
+                        // stop loader
+                        document.getElementById('emergencyideal').value = res.emergencyFund.idealVal;
+                        document.getElementById('emergencycurrent').value = res.emergencyFund.currentVal;
+
+
+                        document.getElementById('investmentideal').value = res.investment.idealVal;
+                        document.getElementById('investmentcurrent').value = res.investment.currentVal;
+
+                        document.getElementById('termideal').value = res.termInsurance.idealVal;
+                        document.getElementById('termcurrent').value = res.termInsurance.currentVal;
+
+
+                        document.getElementById('borrowideal').value = res.borrowing.idealVal;
+                        document.getElementById('borrowcurrent').value = res.borrowing.currentVal;
+
+                        document.getElementById('healthideal').value = res.healthInsurance.idealVal;
+                        document.getElementById('healthcurrent').value = res.healthInsurance.currentVal;
+                        var perc = ((res.points / 18) * 100).toFixed(3);
+                        document.getElementById('streesjoySlider').innerHTML =
+                            `<div class="ReportSliderLine_Pointer" style="left: ` + perc + `%"></div>
+                                        <div class="reportslider-label" style="left: ` + perc + `%">
+                                            <div class="you-are-here">
+                                                <div class="pointYouareHere"><img src="./images/arrow.png" class="img-fluid"></div>
+                                                You are here
+                                            </div>
+                                        </div>`
+
+                        // document.getElementById('stValue').innerHTML += '<input id="stresstojoy" type="range" min="0" max="100" value="25">';
+
+                        // <div id="stValue" class="rkmd-slider slider-discrete slider-lightBlue slider-light">
+                        //     <input id="stresstojoy" type="range" min="0" max="100" value="75">
+                        // </div>
+
+                        if (res.homeLoan || (!res.homeLoan && parseInt(res.salary) < 20000)) {
+                            document.getElementById('home-sec').style.display = "none";
+                            // $('#home-sec').hide();
+                        } else {
+                            document.getElementById('home-sec').style.display = "block";
+                            // $('#home-sec').show();
+                            document.getElementById('homecurrent').value = 0;
+                            document.getElementById('homeideal').value = res.homeLoanAmt.idealVal;
+                        }
+                        document.getElementById('loading-section').style.display = "none";
+                        document.getElementById('sec_webviewmain').style.display = "block";
+                    }
+
+                }
+            });
+        }
+
+        function langMessage(langId) {
+            console.log('--------while loading it is coming----------' + langId)
+            if (langId == 2) {
+                document.getElementById('username').innerHTML = 'प्रिय ' + reportData.name + ',';
+                document.getElementById('emergency-fund').innerHTML = reportData.reportDynamicContent.hindi.emergencyFund;
+                document.getElementById('term-insurance').innerHTML = reportData.reportDynamicContent.hindi.termInsurance;
+                document.getElementById('health-insurance').innerHTML = reportData.reportDynamicContent.hindi.healthInsurance;
+                if (!reportData.homeLoan && parseInt(reportData.salary) > 20000){
+                    document.getElementById('home-loan').innerHTML = reportData.reportDynamicContent.hindi.homeloan;
+                }
+                let hindiContent = ''
+                $('#investment-textContent').find('p').remove()
+                hindiContent = hindiContent + "<p>" + reportData.reportDynamicContent.hindi.investment.line1 + " </p>";
+                hindiContent = hindiContent + "<p>" + reportData.reportDynamicContent.hindi.investment.line2 + " </p>";
+                if (reportData.reportDynamicContent.hindi.investment.line3) {
+                    hindiContent = hindiContent + "<p>" + reportData.reportDynamicContent.hindi.investment.line3 + " </p>";
+                }
+                $('#investment-textContent').append(hindiContent)
+            }
+            else if (langId == 3) {
+                document.getElementById('username').innerHTML = 'प्रिय ' + reportData.name + ',';
+                document.getElementById('emergency-fund').innerHTML = reportData.reportDynamicContent.marathi.emergencyFund;
+                document.getElementById('term-insurance').innerHTML = reportData.reportDynamicContent.marathi.termInsurance;
+                document.getElementById('health-insurance').innerHTML = reportData.reportDynamicContent.marathi.healthInsurance;
+                if (!reportData.homeLoan && parseInt(reportData.salary) > 20000){
+                    document.getElementById('home-loan').innerHTML = reportData.reportDynamicContent.marathi.homeloan;
+                }
+                let marathiContent = ''
+                $('#investment-textContent').find('p').remove()
+                marathiContent = marathiContent + "<p>" + reportData.reportDynamicContent.marathi.investment.line1 + " </p>";
+                marathiContent = marathiContent + "<p>" + reportData.reportDynamicContent.marathi.investment.line2 + " </p>";
+                if (reportData.reportDynamicContent.marathi.investment.line3) {
+                    marathiContent = marathiContent + "<p>" + reportData.reportDynamicContent.marathi.investment.line3 + " </p>";
+                }
+                $('#investment-textContent').append(marathiContent)
+            }
+            else if (langId == 4) {
+                document.getElementById('username').innerHTML = 'ಪ್ರೀತಿಯ ' + reportData.name + ',';
+                document.getElementById('emergency-fund').innerHTML = reportData.reportDynamicContent.kannada.emergencyFund;
+                document.getElementById('term-insurance').innerHTML = reportData.reportDynamicContent.kannada.termInsurance;
+                document.getElementById('health-insurance').innerHTML = reportData.reportDynamicContent.kannada.healthInsurance;
+                if (!reportData.homeLoan && parseInt(reportData.salary) > 20000){
+                    document.getElementById('home-loan').innerHTML = reportData.reportDynamicContent.kannada.homeloan;
+                }
+                let kannadaContent = ''
+                $('#investment-textContent').find('p').remove()
+                kannadaContent = kannadaContent + "<p>" + reportData.reportDynamicContent.kannada.investment.line1 + " </p>";
+                kannadaContent = kannadaContent + "<p>" + reportData.reportDynamicContent.kannada.investment.line2 + " </p>";
+                if (reportData.reportDynamicContent.kannada.investment.line3) {
+                    kannadaContent = kannadaContent + "<p>" + reportData.reportDynamicContent.kannada.investment.line3 + " </p>";
+                }
+                $('#investment-textContent').append(kannadaContent)
+            }
+            else if (langId == 5) {
+                document.getElementById('username').innerHTML = 'அன்பே ' + reportData.name + ',';
+                document.getElementById('emergency-fund').innerHTML = reportData.reportDynamicContent.tamil.emergencyFund;
+                document.getElementById('term-insurance').innerHTML = reportData.reportDynamicContent.tamil.termInsurance;
+                document.getElementById('health-insurance').innerHTML = reportData.reportDynamicContent.tamil.healthInsurance;
+                if (!reportData.homeLoan && parseInt(reportData.salary) > 20000){
+                    document.getElementById('home-loan').innerHTML = reportData.reportDynamicContent.tamil.homeloan;
+                }
+                let tamilContent = ''
+                $('#investment-textContent').find('p').remove()
+                tamilContent = tamilContent + "<p>" + reportData.reportDynamicContent.tamil.investment.line1 + " </p>";
+                tamilContent = tamilContent + "<p>" + reportData.reportDynamicContent.tamil.investment.line2 + " </p>";
+                if (reportData.reportDynamicContent.tamil.investment.line3) {
+                    tamilContent = tamilContent + "<p>" + reportData.reportDynamicContent.tamil.investment.line3 + " </p>";
+                }
+                $('#investment-textContent').append(tamilContent)
+            }
+            else {
+                console.log(JSON.stringify(reportData) + '--------------' + langId)
+                console.log(reportData.reportDynamicContent.english.homeloan)
+                document.getElementById('username').innerHTML = 'Dear ' + reportData.name + ',';
+                document.getElementById('emergency-fund').innerHTML = reportData.reportDynamicContent.english.emergencyFund;
+                document.getElementById('term-insurance').innerHTML = reportData.reportDynamicContent.english.termInsurance;
+                document.getElementById('health-insurance').innerHTML = reportData.reportDynamicContent.english.healthInsurance;
+                if (!reportData.homeLoan && parseInt(reportData.salary) > 20000){
+                    document.getElementById('home-loan').innerHTML = reportData.reportDynamicContent.english.homeloan;
+                }
+                let engContent = ''
+                $('#investment-textContent').find('p').remove()
+                engContent = engContent + "<p>" + reportData.reportDynamicContent.english.investment.line1 + " </p>";
+                engContent = engContent + "<p>" + reportData.reportDynamicContent.english.investment.line2 + " </p>";
+                if (reportData.reportDynamicContent.english.investment.line3) {
+                    engContent = engContent + "<p>" + reportData.reportDynamicContent.english.investment.line3 + " </p>";
+                }
+                $('#investment-textContent').append(engContent)
+            }
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+    </script>
+</body>
+
+</html>
