@@ -20,6 +20,6 @@
     "@typeform/embed": "^0.9.5",
     "bot-middleware-jubi": "^1.0.95",
     "match-all": "^1.2.5",
-    "mongoose": "^5.6.0"
+    "mongoose": "^5.7.5"
   }
 }
